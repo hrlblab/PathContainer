@@ -1,4 +1,4 @@
-# PathContainer
+# PathContainer: Large-scale Patch-wise Pathological Image Feature Dataset with a Hardware-agnostic Feature Extraction Tool
 
 The PathFeature data set is available 
 [Download PathFeature](https://drive.google.com/drive/folders/1sBJBOEO8Mhf5kwu_wtvwUHA2qLWRQ9hO?usp=sharing)
