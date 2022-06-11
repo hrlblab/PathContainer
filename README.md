@@ -3,11 +3,11 @@ The offical implementation of PathContainer, *MUIA 2022*
 
 ![](image/Figure_1.png)
 
-## abstract
+## Abstract
 Recent advances in whole slide imaging (WSI) have transformed computer-aided pathological studies from small-scale (e.g., < 500 patients) to large-scale (e.g., > 10,000 patients). Moreover, a single whole slide image might yield Gigapixel resolution; thus, even basic preprocessing steps, such as foreground segmentation, tiling, and patch-wise feature extraction (e.g., via ImageNet pretrained models), can be computationally expensive. In our method, we present a large-scale patch-wise pathological image feature dataset, covering 14,000 WSIs from TCGA and PAIP cohorts. 
 The contribution of this study is five-fold: 
 
-(1) We release a foreground patch-level feature dataset; 
+(1) We release a foreground patch-level feature dataset called PathContainer; 
 
 (2) The global spatial location of the patch-level features is provided to aggregate WSI-level results; 
 
@@ -17,8 +17,17 @@ The contribution of this study is five-fold:
 
 (5) When performing a standard weakly supervised segmentation method on 940 WSIs, 85.3% of computational time was saved using the PathFeature dataset.
 
+## Dataset
+
+![](image/Figure_2.png)
+
+The PathContainer dataset includes a total of 14000 WSIs, of which 11682 is from TCGA and 2318 is from PAIP.
+
+The ImageNet pretrained ResNet50 model is employed, which utilizes adaptive mean-spatial pooling after the third block of ResNet50 in order to get feature vectors with a dimension of 1024 (i.e., ImageNet) or 2048 (i.e., ImageNet2048) after the fourth block. Beyond controlling the outputs' dimensionalities, we also employ the prevalent Big Transfer (BiT) model as another pretrained model. Similar to ImageNet1024 and ImageNet2048, both 1024 (i.e., BiT1024) and 2048 (i.e., BiT2048) dimensional vectors are provided by PathFeature.
+
 The PathFeature dataset is available for
 [Download](https://drive.google.com/drive/folders/1sBJBOEO8Mhf5kwu_wtvwUHA2qLWRQ9hO?usp=sharing)
+
 
 ## Quick Start
 #### The Docker Image can be obtained by
